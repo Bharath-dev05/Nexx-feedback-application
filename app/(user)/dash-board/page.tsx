@@ -10,18 +10,18 @@ import { maxFreeProjects } from "@/lib/payments";
 export default async function page() {
   const { userId } = auth();
   if (!userId) {
-    return null;
+   return null
   }
 
   const userProjects = await db
     .select()
     .from(projects)
-    .where(eq(projects.userId, userId));
+    .where(eq(projects.userId, userId));  
 
 const subscribed =await getSubscription({userId})
 
   return (
-    <div>
+    <div> 
       <div className="flex items-center justify-center gap-3">
         {" "}
         <h1 className="text-3xl font-bold text-center my-4">Your projects</h1>
