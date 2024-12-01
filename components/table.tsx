@@ -26,6 +26,9 @@ import { InferSelectModel } from "drizzle-orm";
 import { feedbacks, projects } from "@/db/schema";
 import Ratings from "./rating";
 import { count } from "console";
+import ClickableImage from "./image";
+
+// import {ImageUpscale} from 'lucide-react'
 
 type Feedback = InferSelectModel<typeof feedbacks>;
 
@@ -58,6 +61,7 @@ function Table(props: { data: Feedback[] }) {
         header: () => <span>Rating</span>,
         footer: (props) => props.column.id,
       },
+
       {
         accessorKey: "message",
         header: () => "Message",
@@ -65,6 +69,18 @@ function Table(props: { data: Feedback[] }) {
         size: 700,
         minSize: 200,
         maxSize: 600,
+      },
+      {
+        accessorFn: (row) => row.imageUrl,
+        id: "imageurl",
+        cell: (info) =>
+          info.getValue() === null ? (
+            <span>N/A</span>
+          ) : (
+            <ClickableImage imageUrl={info.getValue() as string} />
+          ),
+        header: () => <span>Image</span>,
+        footer: (props) => props.column.id,
       },
     ],
     []
@@ -104,11 +120,9 @@ function MyTable({
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
     onPaginationChange: setPagination,
-    //no need to pass pageCount or rowCount with client-side pagination as it is calculated automatically
     state: {
       pagination,
     },
-    // autoResetPageIndex: false, // turn off page index reset when sorting or filtering
   });
 
   return (

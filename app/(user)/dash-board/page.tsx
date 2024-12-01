@@ -10,7 +10,7 @@ import { maxFreeProjects } from "@/lib/payments";
 export default async function page() {
   const { userId } = auth();
   if (!userId) {
-   return null
+   return null;
   }
 
   const userProjects = await db

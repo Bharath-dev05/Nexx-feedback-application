@@ -8,7 +8,6 @@ const page =({searchParams}:{
     }
 })=>{
     const {plan} =searchParams;
-    console.log(plan);  
     const planId= plan === "monthly" ?monthlyPlanId:yearlyPlanId
     return(
         <div className="flex border p-4 rounded-md flex-col">

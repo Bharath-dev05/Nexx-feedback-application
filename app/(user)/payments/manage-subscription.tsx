@@ -21,7 +21,6 @@ const ManageSubscription = () => {
       }
       ).then((res) => res.json());
 
-      console.log("url", url);
 
       router.push(url.url);
     }
