@@ -22,7 +22,7 @@ const Hero = () => {
                 >Get started
                 </Button>
                 <Button variant={"secondary"}  asChild>
-              <Link href="https://github.com">  <Github className="w-4 h-4 mr-1 "/>
+              <Link href="https://github.com/Bharath-dev05/Nexx-feedback-application">  <Github className="w-4 h-4 mr-1 "/>
               Github</Link>
                     </Button>
         </div>
