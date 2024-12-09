@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 
-const HoverVideo = ({ videoSrc }: any) => {
+const HoverVideo: React.FC<{ videoSrc:string }> = ({ videoSrc }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [hasPlayed, setHasPlayed] = useState(false);

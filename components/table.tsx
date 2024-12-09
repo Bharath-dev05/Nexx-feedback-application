@@ -256,8 +256,8 @@ function Filter({
   column,
   table,
 }: {
-  column: Column<any, any>;
-  table: TanstackTable<any>;
+  column: Column<Feedback, string | number |unknown|null>;
+  table: TanstackTable<Feedback>;
 }) {
   const firstValue = table
     .getPreFilteredRowModel()

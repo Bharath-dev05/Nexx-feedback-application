@@ -1,12 +1,10 @@
 import SubscribeBtn from "../subscribe-btn";
 import { monthlyPlanId,yearlyPlanId } from "@/lib/payments";
 
+interface PageProps { searchParams: { plan: string; }; }
 
-const page =({searchParams}:{
-    searchParams:{
-        plan:string
-    }
-})=>{
+
+const page =({searchParams}:PageProps)=>{
     const {plan} =searchParams;
     const planId= plan === "monthly" ?monthlyPlanId:yearlyPlanId
     return(

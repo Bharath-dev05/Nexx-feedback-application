@@ -1,6 +1,6 @@
 import React from "react";
 
-const ClickableImage = ({ imageUrl }: any) => {
+const ClickableImage: React.FC<{ imageUrl:string }> = ({ imageUrl }) => {
   return (
     <div className=" p-4 max-w-xs text-center border rounded-xl ">
       <a href={imageUrl} target="_blank" rel="noopener noreferrer">
