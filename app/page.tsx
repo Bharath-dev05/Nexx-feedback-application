@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Landingpage from "./landing-page";
 import Footer from "./landing-page/footer";
 

@@ -22,9 +22,9 @@ import {
 } from "@tanstack/react-table";
 
 import { InferSelectModel } from "drizzle-orm";
-import { feedbacks, projects } from "@/db/schema";
+import { feedbacks, } from "@/db/schema";
 import Ratings from "./rating";
-import { count } from "console";
+// import { count } from "console";
 import ClickableImage from "./image";
 
 // import {ImageUpscale} from 'lucide-react'
@@ -32,7 +32,6 @@ import ClickableImage from "./image";
 type Feedback = InferSelectModel<typeof feedbacks>;
 
 function Table(props: { data: Feedback[] }) {
-  const rerender = React.useReducer(() => ({}), {})[1];
 
   const columns = React.useMemo<ColumnDef<Feedback>[]>(
     () => [

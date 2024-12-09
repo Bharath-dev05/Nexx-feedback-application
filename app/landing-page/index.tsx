@@ -1,7 +1,6 @@
 import PricigSection from "./pricing-section";
 import Hero from "./hero";
 import FeaturesSection from "./features-section";
-import VideoHover from "@/components/video";
 import HoverVideo from "@/components/video";
 
 

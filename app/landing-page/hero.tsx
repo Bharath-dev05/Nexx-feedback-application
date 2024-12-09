@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import Link from "next/link";
-import { LogIn,Github, Layout } from "lucide-react";
+import { LogIn,Github,} from "lucide-react";
 import Image from "next/image";
-import HoverVideo from "@/components/video";
+
 
 const Hero = () => {
   return (
