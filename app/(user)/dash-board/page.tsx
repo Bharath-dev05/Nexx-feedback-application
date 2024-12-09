@@ -1,7 +1,7 @@
 import NewProjBtn from "@/components/new-proj";
 import { db } from "@/db";
 import { projects } from "@/db/schema";
-import { auth, currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
 import ProjectList from "./projects-list";
 import { getSubscription } from "@/actions/userSubscriptions";
