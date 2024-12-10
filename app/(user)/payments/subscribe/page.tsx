@@ -4,8 +4,8 @@ import { monthlyPlanId,yearlyPlanId } from "@/lib/payments";
 interface PageProps { searchParams?: { plan?: string; }; }
 
 
-const page = async ({searchParams}:PageProps)=>{
-  const resolvedSearchParams = await Promise.resolve(searchParams);
+const page = async  ({ searchParams }: { searchParams?: { plan?: string } }) =>{
+  const resolvedSearchParams = await Promise.resolve(searchParams || {});
 
   const plan = resolvedSearchParams?.plan || "monthly";
     const planId= plan === "monthly" ?monthlyPlanId:yearlyPlanId
