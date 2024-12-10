@@ -4,7 +4,7 @@ import { auth } from "@clerk/nextjs/server";
 import { projects } from "@/db/schema";
 import { redirect } from "next/navigation";
 
-export async function CreateProject(formData: FormData): Promise<any> {
+export async function CreateProject(formData: FormData): Promise<any|string|undefined> {
   const { userId } = auth();
   const project = {
     name: formData.get("name") as string,

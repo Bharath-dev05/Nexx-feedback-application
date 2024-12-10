@@ -29,7 +29,7 @@ import { monthlyPlanId, yearlyPlanId } from "@/lib/payments";
 
 interface PageProps {
   searchParams?: {
-    plan?: string;
+    plan?: string|undefined;
   };
 }
 
