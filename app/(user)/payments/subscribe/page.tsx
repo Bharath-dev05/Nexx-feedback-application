@@ -1,12 +1,13 @@
 import SubscribeBtn from "../subscribe-btn";
 import { monthlyPlanId, yearlyPlanId } from "@/lib/payments";
 
-const page = ({ searchParams }: {
-  searchParams: {
-    plan: string
-  }
-}) => {
-  const { plan } = searchParams;
+import { ReactNode } from "react";
+
+export default async function page(props: { children: ReactNode; params: Promise<{ plan: string }> }) {
+  const { children, params } = props;
+  
+  // Extract the plan from params
+  const { plan } = await params;
 
   const planId = plan === "monthly" ? monthlyPlanId : yearlyPlanId;
 
@@ -20,4 +21,4 @@ const page = ({ searchParams }: {
   )
 }
 
-export default page;
+// export default page;
