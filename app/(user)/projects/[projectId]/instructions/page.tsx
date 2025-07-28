@@ -1,11 +1,13 @@
 import CopyBtn from "@/components/copy-btn"
 
-// const page =({params}:{
-//     params:{
-//         projectId: string
-//     }
-// })=>{
-    export default function Page({ params }: { params: { projectId: string } }) {
+const page = async ({params}:{
+    params:{
+        projectId: string
+    }
+})=>{
+
+
+    // export default function Page({ params }: { params: { projectId: string } }) {
     // const params= props.params;
 
     if(!params.projectId) return (<div>Invalid Project ID</div>)
@@ -29,4 +31,4 @@ import CopyBtn from "@/components/copy-btn"
     )
 }
 
-// export default page;
+export default page;
