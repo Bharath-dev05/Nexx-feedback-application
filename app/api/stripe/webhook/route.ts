@@ -10,7 +10,7 @@ const relevantEvents = new Set([
 
 export async function POST(req: Request) {
   const body = await req.text();
-  const sig = req.headers.get("stripe-signature") as string;
+  const sig = await req.headers.get("stripe-signature") as string;
   const webHookSecret =
     process.env.NODE_ENV === "production"
       ? process.env.STRIPE_WEBHOOK_SECRET
