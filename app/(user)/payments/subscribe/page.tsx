@@ -1,13 +1,11 @@
+"use client";
 import SubscribeBtn from "../subscribe-btn";
 import { monthlyPlanId, yearlyPlanId } from "@/lib/payments";
+import { useSearchParams } from "next/navigation";
 
-
-interface PageProps {
-  searchParams?: { plan?: string }
-}
-
-export default function Page({ searchParams }: PageProps) {
-  const plan = searchParams?.plan;
+export default function Page() {
+  const searchParams = useSearchParams();
+  const plan = searchParams.get("plan");
   const planId = plan === "monthly" ? monthlyPlanId : yearlyPlanId;
 
   return (
@@ -17,9 +15,7 @@ export default function Page({ searchParams }: PageProps) {
         <SubscribeBtn price={planId} />
       </div>
     </div>
-  )
+  );
 }
-
-// export default page;
 
 
